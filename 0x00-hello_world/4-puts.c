@@ -1,4 +1,8 @@
 #include <stdio.h>
+/**
+ * main- entryp point
+ * return 0 when secuss
+ */`
 
 int main(void)
 {
