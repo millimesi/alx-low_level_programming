@@ -1,38 +1,43 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
-char *_strdup(char *str)
+int **alloc_grid(int width, int height)
 {
-    char *string;
-    int i = 0;
-    while (str[i] != '\0')
+    int *(arr1)[width];
+    arr1 = malloc((width * height)*(sizeof(int)));
+    int i, j;
+    if (arr1 != NULL)
     {
-        i++;
-    }
-    string = malloc((i + 1) * (sizeof(char)));
-    if (string != NULL)
-    {
-        int j;
-        for (j = 0; j < i; j++)
+        for (i =0; i < hieght; i++)
         {
-            string[j] = str[j];    
+            for (j = 0; j < width; j++)
+            {
+                arr1[i][j] = 0;
+            }
         }
-        string[i] = '\0';
     }
-    return (string);
+    int **arr2;
+    arr2 = malloc((height) * (sizeof(*arr1)))
+    for (int l = 0; l < height; l++)
+    {
+        arr2[i] = arr1[i][0];
+    }
+    return (arr2);
 }
 int main(void)
 {
-    char *s;
-    
-    s = _strdup("milla");
-    s[0] = 'g'; 
-    if (s == NULL)
+    int w;
+    int h = 0;
+    int **grid = alloc_grid(3, 3);
+    while (h < 3)
     {
-        printf("failed to allocate memory\n");
-        return (1);
-    }
-    printf("%s\n", s);
-    free(s);
-    return (0);
-}
+        w = 0;
+        while (w < 3)
+        {
+            printf("%d ", grid[h][w]);
+            w++;
+        }
+        printf("\n");
+        h++;
+    }   
+}    
