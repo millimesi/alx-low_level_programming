@@ -3,7 +3,7 @@
  * print_name - prints name
  * @name: string literals
  * @f: function pointer
- * 
+ *
  * Description - prints name it takes functions
  * Retrun: void
  */
