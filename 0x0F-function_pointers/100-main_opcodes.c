@@ -1,17 +1,17 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
- * main - prints its own opcodes
- * @argc: number of arguments
- * @argv: array of arguments
+ * main - entry point
+ * @argc: arg num
+ * @argv: arg list of array
  *
- * Return: Always 0 (Success)
+ * Return: 0 up on success 
  */
 int main(int argc, char *argv[])
 {
-	int bytes, i;
-	char *arr;
+	int memo, i;
+	char *a;
 
 	if (argc != 2)
 	{
@@ -19,24 +19,24 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
-	bytes = atoi(argv[1]);
+	memo = atoi(argv[1]);
 
-	if (bytes < 0)
+	if (memo < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
 
-	arr = (char *)main;
+	a = (char *)main;
 
-	for (i = 0; i < bytes; i++)
+	for (i = 0; i < memo; i++)
 	{
-		if (i == bytes - 1)
+		if (i == memo - 1)
 		{
-			printf("%02hhx\n", arr[i]);
+			printf("%02hhx\n", a[i]);
 			break;
 		}
-		printf("%02hhx ", arr[i]);
+		printf("%02hhx ", a[i]);
 	}
 	return (0);
 }
