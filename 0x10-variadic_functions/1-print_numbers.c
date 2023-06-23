@@ -4,9 +4,9 @@
 
 /**
  * print_numbers - print num
- * @separator: string 
+ * @separator: string
  * @n: num
- * @...: avail parameter 
+ * @...: avail parameter
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {

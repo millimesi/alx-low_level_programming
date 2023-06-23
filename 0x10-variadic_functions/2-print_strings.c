@@ -5,11 +5,10 @@
 /**
  * print_strings - string printer
  * @separator:separetor string
- * @n: num 
+ * @n: num
  * @...: parameters in
  *
- * Description: If separator is NULL, it is not printed.
- *              If one of the strings if NULL, (nil) is printed instead.
+ * Description: If separator is NULL, it is not printed
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
@@ -26,7 +25,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		if (s == NULL)
 			printf("(nil)");
 		else
-			printf("%s", str);
+			printf("%s", s);
 
 		if (i != (n - 1) && separator != NULL)
 			printf("%s", separator);
