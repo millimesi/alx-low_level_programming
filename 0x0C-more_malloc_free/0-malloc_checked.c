@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * *malloc_checked - dynamic memomory 
+ * *malloc_checked - dynamic memomory
  * @b: size
  *
  * Return: address
