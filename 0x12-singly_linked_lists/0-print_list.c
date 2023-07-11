@@ -1,20 +1,32 @@
-#include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
-
+#include <stdio.h>
 /**
- * print_list - print list 
- * @h: head pointer 
+ * print_list - print content of the lisr
+ * @h: head pointer
  *
- * Return: pointer 
+ * Description - pprints the content of lists
+ * Return: size of the lisr
  */
-size_t list_len(const list_t *h)
+size_t print_list(const list_t *h)
 {
-	size_t n = 0;
+	const list_t *ptr = h;
+	size_t size = 0;
 
-	while (h)
+	if (h == NULL)
+		printf("list is emppty\n");
+	while (ptr != NULL)
 	{
-	 n++;
-	 h = h->next;
+		size++;
+		if (ptr->str == NULL)
+		{
+			printf("[0] (nil)\n");
+		}
+		else
+		{
+			printf("[%u] %s\n", ptr->len, ptr->str);
+		}
+		ptr = ptr->next;
 	}
-	return (n);
+	return (size);
 }

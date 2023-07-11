@@ -51,7 +51,6 @@ void print_data(struct node *head)
     struct node *ptr = head;
     while (ptr != NULL)
     {
-        size++;
         printf("%d\t", ptr->data);
         ptr = ptr->link;
     }
@@ -112,4 +111,115 @@ void add_at_pos(struct node *head, int data, int pos)
     }
     ptr->link = ptr2->link;
     ptr2->link = ptr;
+}
+struct node *del_first(struct node *head)
+{
+    if (head == NULL)
+        printf("list is empty\n");
+    else
+    struct node *temp = malloc(sizeof(struct node));
+    temp = head;
+    head = head->link;
+    free(temp); 
+    temp = NULL; 
+}
+struct node *del_last(struct node *head)
+{
+    if (head == NULL)
+        printf("list is empty\n");
+    else if (head->link == NULL)
+        {
+            free(head);
+            head = NULL;
+        }
+    else
+    {
+        struct node *temp =  head;
+        struct node *temp2 = head;
+        while(temp->link != NULL)
+        {
+            temp2 = temp;
+            temp = temp->link;
+        }
+        temp2->link = NULL
+        free(temp);
+        temp = NULL;
+    }
+        return(head);
+}
+struct node *del_last1(struct node *head)
+{
+    if (head == NULL)
+        printf("list is empty\n");
+    else if (head->link == NULL)
+        {
+            free(head);
+            head = NULL;
+        }
+    else
+    {
+        struct node *temp =  head;
+        while(temp->link->link != NULL)
+        {
+            temp = temp->link;
+        }
+        free(temp->link);
+        temp->link = NULL;
+    }
+        return(head);
+}
+void del_pos(struct node **head, int pos)
+{
+    
+    if (head == NULL)
+        printf("list is empty\n");
+    struct node *current = *head;
+    struct node *previous = *head;
+    else if (pos == 1)
+    {
+        *head = current->link;
+        free(current);
+        current = NULL;
+    }
+    else 
+    {
+        while (pos != 1)
+        {
+            previous = current;
+            current = current->link;
+            pos--;
+        }
+        previous->link = current->link;
+        free(current);
+        current = NULL;
+    }
+}
+struct node *del_list(struct node *head)
+{
+    if (head == NULL)
+        printf("list is empty\n");
+    struct node *temp = head;
+    while(temp != NULL)
+    {
+        temp = temp->link;
+        free(head);
+        head = temp;
+    }
+    return(head);
+}
+struct node *reverse_list(struct node *head);
+{
+    if (head == NULL)
+        printf("list is empty\n");
+    struct node *prev = NULL;
+    struct node *next = NULL;
+    while (head != NULL)
+    {
+        next = head->link;
+        head->link = prev;
+        prev = head;
+        head = next;
+    }
+    head = prev;
+    return(head);
 }
